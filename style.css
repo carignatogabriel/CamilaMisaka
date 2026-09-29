@@ -1,0 +1,205 @@
+/* ==========================================
+   VARIAVEIS E PALETA DE CORES
+========================================== */
+:root {
+    --primary-color: #FF1168;
+    --primary-hover: #D60050;
+    --white: #FFFFFF;
+    --bg-light: #FAFAFA;
+    --text-dark: #1A1A1A;
+    --text-muted: #666666;
+    --border-color: #EEEEEE;
+    
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(255, 17, 104, 0.12);
+}
+
+/* ==========================================
+   RESET E BASE
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================
+   CONTAINER E LAYOUT
+========================================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+}
+
+.eyebrow {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   BOTÕES
+========================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+}
+
+/* ==========================================
+   HEADER E NAV
+========================================== */
+.header {
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 50px 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu a {
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+}
+
+/* ==========================================
+   CARTÕES E DEPOIMENTOS
+========================================== */
+.card, .result-card, .testimonial {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.card:hover, .testimonial:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.stars {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   CTA & RODAPÉ
+========================================== */
+.cta {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.cta .btn-outline {
+    color: var(--white) !important;
+    border-color: var(--white);
+}
+
+.cta .btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary-color) !important;
+}
+
+.footer {
+    background-color: var(--white);
+    border-top: 1px solid var(--border-color);
+    padding: 60px 0 20px 0;
+    color: var(--text-dark);
+}
+
+.footer-bottom {
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    color: var(--text-muted);
+}

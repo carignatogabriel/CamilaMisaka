@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Clínica | Harmonização Facial Premium</title>
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones FontAwesome (Opcional, para estrelas e ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==========================================
+       HEADER & NAV
+    ========================================== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#inicio" class="logo">CLÍNICA</a>
+                <div class="menu" id="nav-menu">
+                    <a href="#inicio">Início</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#tratamentos">Tratamentos</a>
+                    <a href="#resultados">Resultados</a>
+                    <a href="#contato">Contato</a>
+                    <a href="#contato" class="btn">Agendar Avaliação</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       HERO / INÍCIO
+    ========================================== -->
+    <section class="section" id="inicio">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Excelência em Estética</span>
+                <h2>Realce sua beleza natural</h2>
+                <p style="margin-top: 15px; color: var(--text-muted);">
+                    Unimos ciência, estética e personalização em um ambiente acolhedor e moderno para valorizar sua beleza com segurança e sofisticação.
+                </p>
+                <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#contato" class="btn">Agende sua Avaliação</a>
+                    <a href="#tratamentos" class="btn btn-outline">Conheça os Tratamentos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       SOBRE
+    ========================================== -->
+    <section class="section" id="sobre" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Sobre a Clínica</span>
+                <h2>Onde a ciência encontra a beleza</h2>
+                <p style="color: var(--text-muted); margin-top: 10px;">
+                    Cada detalhe é pensado para valorizar sua beleza natural com segurança, sofisticação e excelência técnica.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                <div class="card">
+                    <h3 style="margin-bottom: 10px; color: var(--primary-color);">Segurança</h3>
+                    <p style="color: var(--text-muted);">Protocolos rigorosos e produtos de alta qualidade.</p>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 10px; color: var(--primary-color);">Excelência</h3>
+                    <p style="color: var(--text-muted);">Técnicas avançadas e resultados comprovados.</p>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 10px; color: var(--primary-color);">Personalização</h3>
+                    <p style="color: var(--text-muted);">Tratamentos únicos para cada perfil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       TRATAMENTOS
+    ========================================== -->
+    <section class="section" id="tratamentos">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Nossos Tratamentos</span>
+                <h2>Procedimentos Exclusivos</h2>
+                <p style="color: var(--text-muted);">Procedimentos personalizados para realçar sua beleza natural.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="card">
+                    <h3 style="margin-bottom: 15px;">Harmonização Facial Global</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 15px;">Equilíbrio e proporção facial com combinação de técnicas avançadas.</p>
+                    <a href="#contato" class="btn btn-outline" style="width: 100%; text-align: center;">Saiba Mais</a>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 15px;">Harmonização Labial</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 15px;">Lábios naturais, volumosos e bem definidos com técnicas avançadas.</p>
+                    <a href="#contato" class="btn btn-outline" style="width: 100%; text-align: center;">Saiba Mais</a>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 15px;">Toxina Botulínica Premium</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 15px;">Suavização de rugas e linhas de expressão com naturalidade.</p>
+                    <a href="#contato" class="btn btn-outline" style="width: 100%; text-align: center;">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       DEPOIMENTOS / RESULTADOS
+    ========================================== -->
+    <section class="section" id="resultados" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Depoimentos</span>
+                <h2>O que nossas clientes pensam sobre nós nas avaliações do Google?</h2>
+            </div>
+
+            <div class="testimonials-slider" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p style="margin-bottom: 15px; font-style: italic;">"Atendimento impecável"</p>
+                    
+                    <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Fiz um procedimento com a Dra. Camila e fiquei extremamente satisfeita com o resultado, superou minhas expectativas, Dr maravilhosa. Desde o primeiro atendimento fui muito bem acolhida, com toda a atenção, profissionalismo e cuidado. Ela esclareceu todas as minhas dúvidas, transmitiu muita segurança e realizou o procedimento com muita delicadeza. O resultado ficou natural e exatamente como eu esperava. Além da excelente competência técnica, a Dra. demonstra carinho e dedicação com seus pacientes. Recomendo de olhos fechados para quem busca um atendimento de qualidade e resultados incríveis!” Com certeza serei uma paciente para a vida toda agora 🥹</span>
+                    <strong>
+                        Isabella Raissa Borsandi Amorim</strong>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p style="margin-bottom: 15px; font-style: italic;">"Excelente experiência com a Dra. Misaka! O atendimento é realmente humanizado, empático e muito acolhedor, me senti segura e bem orientada em todo o processo. Dá para perceber o cuidado e o profissionalismo em cada detalhe.
+
+                        Amei todo o atendimento e o resultado do trabalho dela, estou apaixonada pelo meu novo queixinho 😍 Já estou ansiosa pelos próximos mls para continuar renovando meu rosto e valorizando ainda mais o meu perfil.
+
+                        Profissional incrível, super recomendo! ✨"</p>
+                    <strong>Kermilly Rodrigues</strong>
+                    <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Toxina Botulínica</span>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p style="margin-bottom: 15px; font-style: italic;">"Já fiz vários procedimentos com a Dra Camila, faciais e corporais e simplesmente amei tudo! Ela tem mãos de fadas, não senti dor alguma e os resultados ficaram muito melhores do que imaginei. Profissional correta, usa produtos excelentes, espaço lindo, aconchegante, organizado e limpo!
+                        Podem ir sem medo, eu indico de olhos fechados!! 💖💖💖"</p>
+                    <strong> 
+                        Eliana Cardoso Ramos 
+                    </strong>
+                    <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Harmonização Facial</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       CTA & CCONTATO (#contato)
+    ========================================== -->
+    <section class="cta" id="contato">
+        <div class="container">
+            <h2>Pronta para transformar?</h2>
+            <p style="margin-bottom: 30px;">Agende sua avaliação personalizada e descubra o tratamento ideal para você.</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/5511999345933" target="_blank" class="btn btn-outline">Agendar via WhatsApp</a>
+                <a href="mailto:camilamisaka10@gmail.com" class="btn btn-outline">Enviar E-mail</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       RODAPÉ / FOOTER
+    ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
+                <div>
+                    <h3 class="logo" style="margin-bottom: 15px;">CLÍNICA</h3>
+                    <p style="color: var(--text-muted);">Excelência em estética e harmonização facial. Resultados naturais com segurança e sofisticação.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 15px;">Navegação</h4>
+                    <p><a href="#inicio">Início</a></p>
+                    <p><a href="#sobre">Sobre</a></p>
+                    <p><a href="#tratamentos">Tratamentos</a></p>
+                    <p><a href="#resultados">Resultados</a></p>
+                    <p><a href="#contato">Contato</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 15px;">Contato</h4>
+                    <p style="color: var(--text-muted);">R. Rodovalho Junior, 216 - Penha de França, São Paulo - SP</p>
+                    <p style="color: var(--text-muted);">Tel/WhatsApp: +55 11 99934-5933</p>
+                    <p style="color: var(--text-muted);">E-mail: camilamisaka10@gmail.com</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 15px;">Horários</h4>
+                    <p style="color: var(--text-muted);">Terça a Sexta: 08h às 17hs</p>
+                    <p style="color: var(--text-muted);">Sábado: 9h às 16h</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Clínica. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Principal -->
+    <script src="script.js"></script>
+</body>
+</html>
