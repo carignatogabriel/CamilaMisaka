@@ -1,33 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Rolagem suave ao clicar nos links do menu (Smooth Scroll)
-    const linksMenu = document.querySelectorAll('a[href^="#"]');
-
-    linksMenu.forEach(link => {
-        link.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-
-            // Verifica se o href é válido e diferente de '#'
-            if (href && href !== '#') {
-                const targetElement = document.querySelector(href);
-                if (targetElement) {
-                    e.preventDefault();
-                    
-                    // Calcula a distância considerando a altura fixa do header
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-
-    // 2. Destacar o link ativo no menu durante a rolagem (ScrollSpy)
-    const sections = document.querySelectorAll('section, footer');
+    // 1. LÓGICA DE SCROLL (Ativa o link conforme a página rola)
+    const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.menu a');
 
     window.addEventListener('scroll', () => {
@@ -50,4 +23,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 2. LÓGICA DO MENU HAMBÚRGUER (Abrir e fechar em telemóveis/celulares)
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    if (menuToggle && navMenu) {
+        // Alterna a classe 'active' ao clicar no botão hambúrguer
+        menuToggle.addEventListener("click", function () {
+            menuToggle.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Fecha o menu ao clicar em qualquer um dos links
+        navLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                menuToggle.classList.remove("active");
+                navMenu.classList.remove("active");
+            });
+        });
+    }
 });

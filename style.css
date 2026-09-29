@@ -2,16 +2,16 @@
    VARIAVEIS E PALETA DE CORES
 ========================================== */
 :root {
-    --primary-color: #FF1168;
-    --primary-hover: #D60050;
+    --primary-color:  #1A1A1A;
+    --primary-hover: #1A1A1A;
     --white: #FFFFFF;
     --bg-light: #FAFAFA;
     --text-dark: #1A1A1A;
-    --text-muted: #666666;
+    --text-muted: #1A1A1A;
     --border-color: #EEEEEE;
     
-    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 8px 24px rgba(255, 17, 104, 0.12);
+    --shadow-sm: 0 2px 10px rgba(#91b2a2);
+    --shadow-md: 0 8px 24px rgba(#91b2a2);
 }
 
 /* ==========================================
@@ -77,7 +77,7 @@ a {
     padding: 12px 28px;
     background-color: var(--primary-color);
     color: var(--white) !important;
-    border-radius: 50px;
+    border-radius: 12px;
     font-weight: 600;
     border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
@@ -104,13 +104,16 @@ a {
 /* ==========================================
    HEADER E NAV
 ========================================== */
+/* ==========================================
+   HEADER E NAV
+========================================== */
 .header {
     background-color: var(--white);
     box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
 .nav {
@@ -138,9 +141,73 @@ a {
 }
 
 .menu a:hover {
-    color: var(--primary-color);
+    color: var(--primary-hover);
 }
 
+/* Esconde o botão de 3 barras em ecrãs grandes (PC) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-dark);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================
+   RESPONSIVIDADE (MOBILE / TELEMÓVEL)
+========================================== */
+@media (max-width: 768px) {
+    /* Exibe o ícone de 3 barras no telemóvel */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Esconde o menu lateralmente fora do ecrã */
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--white);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.4s ease;
+        padding: 40px;
+    }
+
+    /* Classe ativada pelo JS ao clicar nas 3 barras */
+    .menu.active {
+        right: 0;
+    }
+
+    /* Transforma o ícone de 3 barras num "X" quando o menu abre */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
 /* ==========================================
    CARTÕES E DEPOIMENTOS
 ========================================== */
@@ -151,6 +218,7 @@ a {
     padding: 30px;
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
+    
 }
 
 .card:hover, .testimonial:hover {
@@ -202,4 +270,165 @@ a {
     padding: 20px 0;
     margin-top: 40px;
     color: var(--text-muted);
+} /* Chave fechada corretamente aqui */
+
+/* ==========================================
+   SOBRE A PROFISSIONAL
+========================================== */
+
+.professional-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.professional-content {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(300px, 1.1fr);
+    gap: 60px;
+    align-items: center;
+}
+
+.professional-image {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.professional-image img {
+    width: 100%;
+    max-width: 100%; /* Garante que a imagem não estoure a tela */
+    height: auto;     /* Mantém a proporção correta */
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.professional-text .eyebrow {
+    margin-bottom: 10px;
+}
+
+.professional-text h2 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.professional-text p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.professional-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.professional-specialty {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .professional-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .professional-image {
+        max-width: 100%; /* Permite reduzir dinamicamente em telas pequenas */
+    }
+
+    .professional-text {
+        text-align: center;
+    }
+
+    .professional-text .eyebrow {
+        display: block;
+    }
+}
+
+    /* ==========================================
+   SOBRE A PROFISSIONAL
+========================================== */
+
+.professional-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.professional-content {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(300px, 1.1fr);
+    gap: 60px;
+    align-items: center;
+}
+
+.professional-image {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.professional-image img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.professional-text .eyebrow {
+    margin-bottom: 10px;
+}
+
+.professional-text h2 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.professional-text p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.professional-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.professional-specialty {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .professional-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .professional-image {
+        max-width: 400px;
+    }
+
+    .professional-text {
+        text-align: center;
+    }
+
+    .professional-text .eyebrow {
+        display: block;
+    }
 }

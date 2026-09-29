@@ -15,20 +15,29 @@
        HEADER & NAV
     ========================================== -->
     <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="#inicio" class="logo">CLÍNICA</a>
-                <div class="menu" id="nav-menu">
-                    <a href="#inicio">Início</a>
-                    <a href="#sobre">Sobre</a>
-                    <a href="#tratamentos">Tratamentos</a>
-                    <a href="#resultados">Resultados</a>
-                    <a href="#contato">Contato</a>
-                    <a href="#contato" class="btn">Agendar Avaliação</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <nav class="nav">
+            <a href="#inicio" class="logo">CLÍNICA</a>
+            
+            <!-- Botão Hambúrguer para Telemóvel/Celular -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="menu" id="nav-menu">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#tratamentos">Tratamentos</a>
+                <a href="#resultados">Resultados</a>
+                <a href="#contato">Contato</a>
+                <a href="#contato" class="btn">Agendar Avaliação</a>
+            </div>
+        </nav>
+    </div>
+</header>
+                
 
     <!-- ==========================================
        HERO / INÍCIO
@@ -78,6 +87,60 @@
             </div>
         </div>
     </section>
+
+    <!-- ==========================================
+   SOBRE A PROFISSIONAL
+========================================== -->
+
+<section class="professional-section" id="profissional">
+    <div class="container">
+
+        <div class="professional-content">
+
+            <!-- FOTO DA PROFISSIONAL -->
+            <div class="professional-image">
+                <img src="assets/imagens/unnamed.jpeg" alt="Dra. Camila Misaka">
+            </div>
+
+            <!-- TEXTO DA PROFISSIONAL -->
+            <div class="professional-text">
+
+                <span class="eyebrow">Conheça a profissional</span>
+
+                <h2>Quem está por trás da Clínica</h2>
+
+                <div class="professional-name">
+                    Dra. Camila Misaka
+                </div>
+
+                <div class="professional-specialty">
+                    Especialista em Estética e Harmonização Facial
+                </div>
+
+                <p>
+                    Com dedicação, conhecimento e atenção a cada detalhe,
+                    a Dra. Camila Misaka trabalha para proporcionar resultados
+                    naturais, personalizados e alinhados às características
+                    de cada paciente.
+                </p>
+
+                <p>
+                    Seu propósito é unir conhecimento técnico, segurança e
+                    cuidado individualizado, criando uma experiência acolhedora
+                    desde a avaliação até o acompanhamento de cada tratamento.
+                </p>
+
+                <p>
+                    Cada procedimento é planejado de forma personalizada,
+                    respeitando a beleza e a individualidade de cada pessoa.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
     <!-- ==========================================
        TRATAMENTOS
