@@ -4,25 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Clínica | Harmonização Facial Premium</title>
+    <title>Dra. Camila Misaka | Estética e Harmonização Facial</title>
+    <meta name="description"
+        content="Dra. Camila Misaka, biomédica especialista em Estética Avançada. Harmonização facial e corporal, gerenciamento de pele e toxina botulínica com resultados naturais, na Penha de França, São Paulo.">
+    <meta name="theme-color" content="#33443c">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2333443c'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%23e3c690'%3ECM%3C/text%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dra. Camila Misaka | Estética e Harmonização Facial">
+    <meta property="og:description" content="Ciência, estética e personalização para valorizar sua beleza natural com segurança e sofisticação.">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Evita "flash" de conteúdo escondido: as animações só ativam se o JS rodar -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- CSS Principal -->
     <link rel="stylesheet" href="style.css">
-    <!-- Ícones FontAwesome (Opcional, para estrelas e ícones) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" as="image" href="assets/otimizado/hero.webp" type="image/webp">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Dra. Camila Misaka",
+      "description": "Estética avançada, harmonização facial e corporal, gerenciamento de pele e toxina botulínica.",
+      "telephone": "+5511999345933",
+      "email": "camilamisaka10@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Rodovalho Junior, 216 - Penha de França",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:00" }
+      ]
+    }
+    </script>
 </head>
 
 <body>
 
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
     <!-- ==========================================
         HEADER & NAV
     ========================================== -->
-    <header class="header">
+    <header class="header is-top" id="header">
         <div class="container">
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegação principal">
                 <a href="#inicio" class="logo">DRA CAMILA MISAKA</a>
 
-                <!-- Botão Hambúrguer para Telemóvel/Celular -->
-                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="nav-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -31,296 +74,531 @@
                 <div class="menu" id="nav-menu">
                     <a href="#inicio">Início</a>
                     <a href="#sobre">Sobre</a>
+                    <a href="#profissional">A Dra.</a>
                     <a href="#tratamentos">Tratamentos</a>
                     <a href="#resultados">Resultados</a>
                     <a href="#contato">Contato</a>
-                    <a href="#contato" class="btn">Agendar Avaliação</a>
+                    <a href="#agendar" class="btn btn-nav">Agendar Avaliação</a>
                 </div>
             </nav>
         </div>
     </header>
+    <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
 
-    <!-- ==========================================
-        HERO / INÍCIO
-    ========================================== -->
-    <section class="hero" id="inicio">
-        <!-- IMAGEM DE FUNDO -->
-        <img src="assets/imagens/Gemini_Generated_Image_jqvzyjqvzyjqvzyj.jpg" alt="Dra. Camila Misaka" class="hero-bg">
+    <main id="conteudo">
 
-        <!-- CONTEÚDO SOBREPOSTO -->
-        <div class="hero-content">
-            <h1>Excelência em Estética</h1>
-            <h2>Realce sua beleza natural</h2>
-            <p>
-                Unimos ciência, estética e personalização em um ambiente
-                acolhedor e moderno para valorizar sua beleza com segurança
-                e sofisticação.
-            </p>
-            <div class="hero-buttons">
-                <a href="#contato" class="btn btn-primary">Agende sua Avaliação</a>
-                <a href="#tratamentos" class="btn btn-secondary">Conheça os Tratamentos</a>
+        <!-- ==========================================
+            HERO / INÍCIO
+        ========================================== -->
+        <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+            <div class="hero-media" id="hero-media">
+                <img src="assets/otimizado/hero.webp" alt="Rosto feminino entre plumas douradas, retrato de beleza natural"
+                    class="hero-bg" fetchpriority="high" width="1600" height="679">
             </div>
-        </div>
-    </section>
 
-    <!-- ==========================================
-        SOBRE
-    ========================================== -->
-    <section class="section" id="sobre" style="background-color: var(--bg-light);">
-
-        <div class="container">
-            <div class="section-heading">
-                <span class="eyebrow">Sobre a Clínica</span>
-                <h2>Onde a ciência encontra a beleza</h2>
-                <p style="color: var(--text-muted); margin-top: 10px;">
-                    Cada detalhe é pensado para valorizar sua beleza natural com segurança, sofisticação e excelência
-                    técnica.
+            <div class="hero-content">
+                <span class="hero-badge" data-open-status>
+                    <i class="status-dot" aria-hidden="true"></i>
+                    <span data-open-status-text>Confira nossos horários</span>
+                </span>
+                <h1 id="hero-titulo">Excelência em Estética</h1>
+                <h2>Realce sua beleza natural</h2>
+                <p>
+                    Unimos ciência, estética e personalização em um ambiente
+                    acolhedor e moderno para valorizar sua beleza com segurança
+                    e sofisticação.
                 </p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                <div class="card">
-                    <h3 style="margin-bottom: 10px; color: var(--primary-color);">Segurança</h3>
-                    <p style="color: var(--text-muted);">Protocolos rigorosos e produtos de alta qualidade.</p>
-                </div>
-                <div class="card">
-                    <h3 style="margin-bottom: 10px; color: var(--primary-color);">Excelência</h3>
-                    <p style="color: var(--text-muted);">Técnicas avançadas e resultados comprovados.</p>
-                </div>
-                <div class="card">
-                    <h3 style="margin-bottom: 10px; color: var(--primary-color);">Personalização</h3>
-                    <p style="color: var(--text-muted);">Tratamentos únicos para cada perfil.</p>
+                <div class="hero-buttons">
+                    <a href="#agendar" class="btn btn-primary">Agende sua Avaliação</a>
+                    <a href="#tratamentos" class="btn btn-secondary">Conheça os Tratamentos</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ==========================================
-        SOBRE A PROFISSIONAL
-    ========================================== -->
-    <section class="professional-section" id="profissional">
+            <a href="#sobre" class="scroll-cue" aria-label="Rolar para baixo">
+                <span>Role</span>
+                <i aria-hidden="true"></i>
+            </a>
+        </section>
 
-        <div class="container">
-
-            <div class="professional-content">
-
-                <!-- FOTO DA PROFISSIONAL -->
-                <div class="professional-image">
-                    <img src="assets/imagens/unnamed.jpeg" alt="Dra. Camila Misaka">
-                </div>
-
-                <!-- TEXTO DA PROFISSIONAL -->
-                <div class="professional-text">
-
-                    <span class="eyebrow">Conheça a profissional</span>
-
-                    <h2>Quem está por trás da Clínica</h2>
-
-                    <div class="professional-name">
-                        Dra. Camila Misaka
-                    </div>
-
-                    <div class="professional-specialty">
-                        Especialista em Estética e Harmonização Facial
-                    </div>
-
-                    <p>
-                        Com dedicação, conhecimento e atenção a cada detalhe,
-                        a Dra. Camila Misaka trabalha para proporcionar resultados
-                        naturais, personalizados e alinhados às características
-                        de cada paciente.
-                    </p>
-
-                    <p>
-                        Seu propósito é unir conhecimento técnico, segurança e
-                        cuidado individualizado, criando uma experiência acolhedora
-                        desde a avaliação até o acompanhamento de cada tratamento.
-                    </p>
-
-                    <p>
-                        Cada procedimento é planejado de forma personalizada,
-                        respeitando a beleza e a individualidade de cada pessoa.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ==========================================
-        TRATAMENTOS
-    ========================================== -->
-    <section class="section" id="tratamentos">
-        <div class="container">
-            <div class="section-heading">
-                <span class="eyebrow">Nossos Tratamentos</span>
-                <h2>Procedimentos Exclusivos</h2>
-                <p style="color: var(--text-muted);">Procedimentos personalizados para realçar sua beleza natural.</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div class="card card-tratamento card-tratamento-1">
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <h3 style="margin-bottom: 15px;">Harmonização Facial</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 15px;">Equilíbrio e proporção facial com
-                            combinação de técnicas avançadas.</p>
-                        <a href="#contato" class="btn btn-outline" style="width: 100%; text-align: center;">Saiba
-                            Mais</a>
-                    </div>
-                </div>
-                <div class="card card-tratamento card-tratamento-2">
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <h3 style="margin-bottom: 15px;">Harmonização Corporal</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 15px;">Lábios naturais, volumosos e bem
-                            definidos com técnicas avançadas.</p>
-                        <a href="#contato" class="btn btn-outline" style="width: 100%; text-align: center;">Saiba
-                            Mais</a>
-                    </div>
-                </div>
-                <div class="card card-tratamento card-tratamento-3">
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <h3 style="margin-bottom: 15px;">Gerenciamento de pele</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 15px;">Suavização de rugas e linhas de
-                            expressão com naturalidade.</p>
-                        <a href="#contato" class="btn btn-outline" style="width: 100%; text-align: center;">Saiba
-                            Mais</a>
-                    </div>
-                </div>
+        <!-- Faixa de credenciais (marquee) -->
+        <div class="marquee" aria-label="Credenciais e especialidades">
+            <div class="marquee-track">
+                <ul>
+                    <li>Biomédica</li>
+                    <li>Estética Avançada</li>
+                    <li>CRBM 59784</li>
+                    <li>Resultados Naturais</li>
+                    <li>Harmonização Facial</li>
+                    <li>Harmonização Corporal</li>
+                    <li>Gerenciamento de Pele</li>
+                    <li>Toxina Botulínica</li>
+                </ul>
+                <ul aria-hidden="true">
+                    <li>Biomédica</li>
+                    <li>Estética Avançada</li>
+                    <li>CRBM 59784</li>
+                    <li>Resultados Naturais</li>
+                    <li>Harmonização Facial</li>
+                    <li>Harmonização Corporal</li>
+                    <li>Gerenciamento de Pele</li>
+                    <li>Toxina Botulínica</li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    <!-- ==========================================
-        DEPOIMENTOS / RESULTADOS
-    ========================================== -->
-    <section class="section" id="resultados" style="background-color: var(--bg-light);">
-        <div class="container">
-            <div class="section-heading">
-                <span class="eyebrow">Depoimentos</span>
-                <h2>O que nossas clientes pensam sobre nós nas avaliações do Google?</h2>
-            </div>
-
-            <div class="testimonials-slider"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p style="margin-bottom: 15px; font-style: italic;">"Atendimento impecável"</p>
-
-                    <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Fiz um procedimento com
-                        a Dra. Camila e fiquei extremamente satisfeita com o resultado, superou minhas expectativas, Dr
-                        maravilhosa. Desde o primeiro atendimento fui muito bem acolhida, com toda a atenção,
-                        profissionalismo e cuidado. Ela esclareceu todas as minhas dúvidas, transmitiu muita segurança e
-                        realizou o procedimento com muita delicadeza. O resultado ficou natural e exatamente como eu
-                        esperava. Além da excelente competência técnica, a Dra. demonstra carinho e dedicação com seus
-                        pacientes. Recomendo de olhos fechados para quem busca um atendimento de qualidade e resultados
-                        incríveis!” Com certeza serei uma paciente para a vida toda agora 🥹</span>
-                    <strong>
-                        Isabella Raissa Borsandi Amorim</strong>
+        <!-- ==========================================
+            SOBRE
+        ========================================== -->
+        <section class="section section-alt" id="sobre" aria-labelledby="sobre-titulo">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="eyebrow">Sobre a Clínica</span>
+                    <h2 id="sobre-titulo">Onde a ciência encontra a beleza</h2>
+                    <p class="lead">
+                        Cada detalhe é pensado para valorizar sua beleza natural com segurança, sofisticação e excelência
+                        técnica.
+                    </p>
                 </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p style="margin-bottom: 15px; font-style: italic;">"Excelente experiência com a Dra. Misaka! O
-                        atendimento é realmente humanizado, empático e muito acolhedor, me senti segura e bem orientada
-                        em todo o processo. Dá para perceber o cuidado e o profissionalismo em cada detalhe.
 
-                        Amei todo o atendimento e o resultado do trabalho dela, estou apaixonada pelo meu novo queixinho
-                        😍 Já estou ansiosa pelos próximos mls para continuar renovando meu rosto e valorizando ainda
-                        mais o meu perfil.
-
-                        Profissional incrível, super recomendo! ✨"</p>
-                    <strong>Kermilly Rodrigues</strong>
-                    <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Toxina Botulínica</span>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p style="margin-bottom: 15px; font-style: italic;">"Já fiz vários procedimentos com a Dra Camila,
-                        faciais e corporais e simplesmente amei tudo! Ela tem mãos de fadas, não senti dor alguma e os
-                        resultados ficaram muito melhores do que imaginei. Profissional correta, usa produtos
-                        excelentes, espaço lindo, aconchegante, organizado e limpo!
-                        Podem ir sem medo, eu indico de olhos fechados!! 💖💖💖"</p>
-                    <strong>
-                        Eliana Cardoso Ramos
-                    </strong>
-                    <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Harmonização
-                        Facial</span>
+                <div class="pillars">
+                    <article class="card pillar reveal" style="--d:0ms">
+                        <span class="pillar-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                        <span class="pillar-num" aria-hidden="true">01</span>
+                        <h3>Segurança</h3>
+                        <p>Protocolos rigorosos e produtos de alta qualidade.</p>
+                    </article>
+                    <article class="card pillar reveal" style="--d:120ms">
+                        <span class="pillar-icon"><i class="fa-solid fa-gem" aria-hidden="true"></i></span>
+                        <span class="pillar-num" aria-hidden="true">02</span>
+                        <h3>Excelência</h3>
+                        <p>Técnicas avançadas e resultados comprovados.</p>
+                    </article>
+                    <article class="card pillar reveal" style="--d:240ms">
+                        <span class="pillar-icon"><i class="fa-solid fa-fingerprint" aria-hidden="true"></i></span>
+                        <span class="pillar-num" aria-hidden="true">03</span>
+                        <h3>Personalização</h3>
+                        <p>Tratamentos únicos para cada perfil.</p>
+                    </article>
                 </div>
             </div>
+        </section>
 
+        <!-- ==========================================
+            SOBRE A PROFISSIONAL
+        ========================================== -->
+        <section class="professional-section" id="profissional" aria-labelledby="prof-titulo">
+            <div class="container">
 
-            <!-- SEÇÃO DE VÍDEO -->
-            <section class="section-videos">
-                <div class="container">
-                    <div class="video-container-wrapper">
-                        <h3>Acompanhe um pouco mais sobre nossos procedimentos:</h3>
+                <div class="professional-content">
 
-                        <div class="video-box">
-                            <video controls style="width: 100%; height: auto; display: block; background-color: #000;">
-                                <source src="./assets/imagens/snapinsta-1790776188151.mp4" type="video/mp4">
-                                Seu navegador não suporta a exibição deste vídeo.
-                            </video>
+                    <!-- FOTO DA PROFISSIONAL -->
+                    <div class="professional-image reveal reveal-left">
+                        <div class="photo-frame">
+                            <img src="assets/otimizado/quem-sou-eu.webp"
+                                alt="Dra. Camila Misaka sorrindo. Biomédica, especialista em Estética Avançada, CRBM 59784"
+                                width="816" height="1020" loading="lazy">
+                            <span class="photo-badge"><strong>CRBM</strong> 59784</span>
                         </div>
                     </div>
+
+                    <!-- TEXTO DA PROFISSIONAL -->
+                    <div class="professional-text reveal" style="--d:150ms">
+
+                        <span class="eyebrow">Conheça a profissional</span>
+
+                        <h2 id="prof-titulo">Quem está por trás da Clínica</h2>
+
+                        <div class="professional-name">
+                            Dra. Camila Misaka
+                        </div>
+
+                        <div class="professional-specialty">
+                            Especialista em Estética e Harmonização Facial
+                        </div>
+
+                        <p>
+                            Com dedicação, conhecimento e atenção a cada detalhe,
+                            a Dra. Camila Misaka trabalha para proporcionar resultados
+                            naturais, personalizados e alinhados às características
+                            de cada paciente.
+                        </p>
+
+                        <p>
+                            Seu propósito é unir conhecimento técnico, segurança e
+                            cuidado individualizado, criando uma experiência acolhedora
+                            desde a avaliação até o acompanhamento de cada tratamento.
+                        </p>
+
+                        <p>
+                            Cada procedimento é planejado de forma personalizada,
+                            respeitando a beleza e a individualidade de cada pessoa.
+                        </p>
+
+                        <ul class="chips" aria-label="Um pouco sobre a Dra. Camila">
+                            <li><i class="fa-solid fa-microscope" aria-hidden="true"></i> Biomédica</li>
+                            <li><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Estética Avançada</li>
+                            <li><i class="fa-solid fa-leaf" aria-hidden="true"></i> Resultados naturais</li>
+                            <li><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Jogos, animes e doramas</li>
+                            <li><i class="fa-solid fa-mug-hot" aria-hidden="true"></i> Um bom café</li>
+                        </ul>
+
+                        <blockquote class="pull-quote">
+                            Elevar a beleza feminina é mais do que um propósito, é a minha paixão.
+                            <cite>Dra. Camila Misaka</cite>
+                        </blockquote>
+
+                    </div>
+
                 </div>
-            </section>
 
+                <!-- GALERIA -->
+                <div class="gallery-block">
+                    <div class="gallery-head reveal">
+                        <h3>Um pouco mais da Dra. Camila</h3>
+                        <div class="gallery-nav" aria-hidden="false">
+                            <button class="round-btn" id="gal-prev" aria-label="Fotos anteriores"><i
+                                    class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                            <button class="round-btn" id="gal-next" aria-label="Próximas fotos"><i
+                                    class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
 
+                    <div class="gallery" id="gallery" tabindex="0" aria-label="Galeria de fotos, arraste para o lado">
+                        <button class="g-item reveal" data-lightbox="galeria"
+                            data-full="assets/otimizado/galeria-1.jpg" data-caption="Dra. Camila Misaka">
+                            <img src="assets/otimizado/galeria-1.jpg" alt="Dra. Camila Misaka de blazer claro, pensativa"
+                                width="853" height="1280" loading="lazy" draggable="false">
+                        </button>
+                        <button class="g-item reveal" style="--d:80ms" data-lightbox="galeria"
+                            data-full="assets/otimizado/galeria-2.jpg" data-caption="Dra. Camila Misaka">
+                            <img src="assets/otimizado/galeria-2.jpg" alt="Dra. Camila Misaka de macacão verde, de lado"
+                                width="853" height="1280" loading="lazy" draggable="false">
+                        </button>
+                        <button class="g-item reveal" style="--d:160ms" data-lightbox="galeria"
+                            data-full="assets/otimizado/galeria-3.jpg" data-caption="Dra. Camila Misaka">
+                            <img src="assets/otimizado/galeria-3.jpg" alt="Dra. Camila Misaka sorrindo de macacão verde"
+                                width="853" height="1280" loading="lazy" draggable="false">
+                        </button>
+                        <button class="g-item reveal" style="--d:240ms" data-lightbox="galeria"
+                            data-full="assets/otimizado/galeria-4.jpg" data-caption="Dra. Camila Misaka">
+                            <img src="assets/otimizado/galeria-4.jpg" alt="Dra. Camila Misaka de conjunto marrom, apoiada no sofá"
+                                width="853" height="1280" loading="lazy" draggable="false">
+                        </button>
+                        <button class="g-item reveal" style="--d:320ms" data-lightbox="galeria"
+                            data-full="assets/otimizado/galeria-5.jpg" data-caption="Dra. Camila Misaka">
+                            <img src="assets/otimizado/galeria-5.jpg" alt="Dra. Camila Misaka sentada em sofá branco"
+                                width="853" height="1280" loading="lazy" draggable="false">
+                        </button>
+                    </div>
+                </div>
 
-
-
-        </div>
-        </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-        CTA & CCONTATO (#contato)
-    ========================================== -->
-    <section class="cta" id="contato">
-        <div class="container">
-            <h2>Pronta para transformar?</h2>
-            <p style="margin-bottom: 30px;">Agende sua avaliação personalizada e descubra o tratamento ideal para você.
-            </p>
-            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://wa.me/5511999345933" target="_blank" class="btn btn-outline">Agendar via WhatsApp</a>
-                <a href="mailto:camilamisaka10@gmail.com" class="btn btn-outline">Enviar E-mail</a>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ==========================================
+            TRATAMENTOS
+        ========================================== -->
+        <section class="section" id="tratamentos" aria-labelledby="trat-titulo">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="eyebrow">Nossos Tratamentos</span>
+                    <h2 id="trat-titulo">Procedimentos Exclusivos</h2>
+                    <p class="lead">Procedimentos personalizados para realçar sua beleza natural.</p>
+                </div>
+
+                <div class="treatments">
+                    <article class="treat reveal" style="--d:0ms" data-treatment="Harmonização Facial">
+                        <img class="treat-img" src="assets/otimizado/trat-facial.webp"
+                            alt="Antes e depois de harmonização facial, perfil" width="900" height="1124" loading="lazy">
+                        <div class="treat-body">
+                            <span class="treat-num" aria-hidden="true">01</span>
+                            <h3>Harmonização Facial</h3>
+                            <p>Equilíbrio e proporção facial com combinação de técnicas avançadas.</p>
+                            <div class="treat-actions">
+                                <button class="btn btn-light" data-book>Saiba Mais</button>
+                                <button class="icon-btn" data-lightbox="resultados"
+                                    data-full="assets/otimizado/facial-full.webp"
+                                    data-caption="Harmonização Facial. Antes e depois"
+                                    aria-label="Ampliar antes e depois de Harmonização Facial"><i
+                                        class="fa-solid fa-expand" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="treat reveal" style="--d:120ms" data-treatment="Harmonização Corporal">
+                        <img class="treat-img" src="assets/otimizado/trat-corporal.webp"
+                            alt="Antes e depois de harmonização corporal" width="900" height="1124" loading="lazy">
+                        <div class="treat-body">
+                            <span class="treat-num" aria-hidden="true">02</span>
+                            <h3>Harmonização Corporal</h3>
+                            <p>Lábios naturais, volumosos e bem definidos com técnicas avançadas.</p>
+                            <div class="treat-actions">
+                                <button class="btn btn-light" data-book>Saiba Mais</button>
+                                <button class="icon-btn" data-lightbox="resultados"
+                                    data-full="assets/otimizado/corporal-full.webp"
+                                    data-caption="Harmonização Corporal. Antes e depois"
+                                    aria-label="Ampliar antes e depois de Harmonização Corporal"><i
+                                        class="fa-solid fa-expand" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="treat reveal" style="--d:240ms" data-treatment="Gerenciamento de pele">
+                        <img class="treat-img" src="assets/otimizado/trat-pele.webp"
+                            alt="Paciente em procedimento de cuidado com a pele, com vapor" width="900" height="1350"
+                            loading="lazy">
+                        <div class="treat-body">
+                            <span class="treat-num" aria-hidden="true">03</span>
+                            <h3>Gerenciamento de pele</h3>
+                            <p>Suavização de rugas e linhas de expressão com naturalidade.</p>
+                            <div class="treat-actions">
+                                <button class="btn btn-light" data-book>Saiba Mais</button>
+                                <button class="icon-btn" data-lightbox="resultados"
+                                    data-full="assets/otimizado/pele-full.webp" data-caption="Gerenciamento de pele"
+                                    aria-label="Ampliar foto de Gerenciamento de pele"><i class="fa-solid fa-expand"
+                                        aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+            DEPOIMENTOS / RESULTADOS
+        ========================================== -->
+        <section class="section section-alt" id="resultados" aria-labelledby="dep-titulo">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="eyebrow">Depoimentos</span>
+                    <h2 id="dep-titulo">O que nossas clientes pensam sobre nós nas avaliações do Google?</h2>
+                </div>
+
+                <div class="carousel reveal" id="carousel" role="region" aria-roledescription="carrossel"
+                    aria-label="Depoimentos de clientes">
+                    <div class="carousel-track" id="carousel-track" tabindex="0">
+
+                        <figure class="testimonial slide" aria-roledescription="slide">
+                            <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                            <div class="stars" role="img" aria-label="5 de 5 estrelas">★★★★★</div>
+                            <p class="t-title">"Atendimento impecável"</p>
+                            <blockquote class="t-text" data-clamp>
+                                Fiz um procedimento com a Dra. Camila e fiquei extremamente satisfeita com o resultado,
+                                superou minhas expectativas, Dr maravilhosa. Desde o primeiro atendimento fui muito bem
+                                acolhida, com toda a atenção, profissionalismo e cuidado. Ela esclareceu todas as minhas
+                                dúvidas, transmitiu muita segurança e realizou o procedimento com muita delicadeza. O
+                                resultado ficou natural e exatamente como eu esperava. Além da excelente competência
+                                técnica, a Dra. demonstra carinho e dedicação com seus pacientes. Recomendo de olhos
+                                fechados para quem busca um atendimento de qualidade e resultados incríveis! Com certeza
+                                serei uma paciente para a vida toda agora 🥹
+                            </blockquote>
+                            <figcaption>
+                                <span class="avatar" aria-hidden="true">I</span>
+                                <span><strong>Isabella Raissa Borsandi Amorim</strong></span>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="testimonial slide" aria-roledescription="slide">
+                            <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                            <div class="stars" role="img" aria-label="5 de 5 estrelas">★★★★★</div>
+                            <blockquote class="t-text" data-clamp>
+                                Excelente experiência com a Dra. Misaka! O atendimento é realmente humanizado, empático e
+                                muito acolhedor, me senti segura e bem orientada em todo o processo. Dá para perceber o
+                                cuidado e o profissionalismo em cada detalhe.<br><br>
+                                Amei todo o atendimento e o resultado do trabalho dela, estou apaixonada pelo meu novo
+                                queixinho 😍 Já estou ansiosa pelos próximos mls para continuar renovando meu rosto e
+                                valorizando ainda mais o meu perfil.<br><br>
+                                Profissional incrível, super recomendo! ✨
+                            </blockquote>
+                            <figcaption>
+                                <span class="avatar" aria-hidden="true">K</span>
+                                <span><strong>Kermilly Rodrigues</strong><small>Toxina Botulínica</small></span>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="testimonial slide" aria-roledescription="slide">
+                            <i class="fa-solid fa-quote-right quote-mark" aria-hidden="true"></i>
+                            <div class="stars" role="img" aria-label="5 de 5 estrelas">★★★★★</div>
+                            <blockquote class="t-text" data-clamp>
+                                Já fiz vários procedimentos com a Dra Camila, faciais e corporais e simplesmente amei
+                                tudo! Ela tem mãos de fadas, não senti dor alguma e os resultados ficaram muito melhores
+                                do que imaginei. Profissional correta, usa produtos excelentes, espaço lindo, aconchegante,
+                                organizado e limpo! Podem ir sem medo, eu indico de olhos fechados!! 💖💖💖
+                            </blockquote>
+                            <figcaption>
+                                <span class="avatar" aria-hidden="true">E</span>
+                                <span><strong>Eliana Cardoso Ramos</strong><small>Harmonização Facial</small></span>
+                            </figcaption>
+                        </figure>
+
+                    </div>
+
+                    <div class="carousel-controls">
+                        <button class="round-btn" id="car-prev" aria-label="Depoimento anterior"><i
+                                class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                        <div class="dots" id="car-dots" role="tablist" aria-label="Escolher depoimento"></div>
+                        <button class="round-btn" id="car-next" aria-label="Próximo depoimento"><i
+                                class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO DE VÍDEO -->
+            <div class="section-videos">
+                <div class="container video-layout">
+                    <div class="video-copy reveal">
+                        <span class="eyebrow eyebrow-light">Nos bastidores</span>
+                        <h3>Acompanhe um pouco mais sobre nossos procedimentos:</h3>
+                        <p>Veja de perto o cuidado, a técnica e o acolhimento que fazem parte de cada atendimento.</p>
+                        <a href="#agendar" class="btn btn-secondary">Quero agendar minha avaliação</a>
+                    </div>
+
+                    <div class="video-box reveal" style="--d:150ms" id="video-box">
+                        <video id="video" preload="none" playsinline poster="assets/otimizado/video-poster.webp"
+                            aria-label="Vídeo sobre os procedimentos da Dra. Camila Misaka">
+                            <source src="./assets/imagens/snapinsta-1790776188151.mp4" type="video/mp4">
+                            Seu navegador não suporta a exibição deste vídeo.
+                        </video>
+                        <button class="play-btn" id="play-btn" aria-label="Reproduzir vídeo">
+                            <i class="fa-solid fa-play" aria-hidden="true"></i>
+                        </button>
+                        <button class="mute-btn" id="mute-btn" aria-label="Ativar ou desativar o som" hidden>
+                            <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        </button>
+                        <div class="video-progress" id="video-progress" aria-hidden="true"><span></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+            CTA & CONTATO (#contato)
+        ========================================== -->
+        <section class="cta" id="contato" aria-labelledby="cta-titulo">
+            <div class="container cta-grid">
+
+                <div class="cta-info">
+                    <span class="eyebrow eyebrow-light reveal">Contato</span>
+                    <h2 id="cta-titulo" class="reveal" style="--d:80ms">Pronta para transformar?</h2>
+                    <p class="reveal" style="--d:160ms">Agende sua avaliação personalizada e descubra o tratamento ideal
+                        para você.</p>
+
+                    <div class="cta-buttons reveal" style="--d:240ms">
+                        <a href="https://wa.me/5511999345933" target="_blank" rel="noopener"
+                            class="btn btn-outline"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Agendar via
+                            WhatsApp</a>
+                        <a href="mailto:camilamisaka10@gmail.com" class="btn btn-outline"><i
+                                class="fa-regular fa-envelope" aria-hidden="true"></i> Enviar E-mail</a>
+                    </div>
+
+                    <ul class="info-list reveal" style="--d:320ms">
+                        <li>
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <span>R. Rodovalho Junior, 216 - Penha de França, São Paulo - SP</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                            <span>Terça a Sexta: 08h às 17hs<br>Sábado: 9h às 16h</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                            <span data-open-status><i class="status-dot" aria-hidden="true"></i> <span
+                                    data-open-status-text>Confira nossos horários</span></span>
+                        </li>
+                    </ul>
+
+                    <div class="map reveal" style="--d:400ms">
+                        <iframe title="Mapa com a localização da clínica" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://maps.google.com/maps?q=R.%20Rodovalho%20Junior%2C%20216%20-%20Penha%20de%20Fran%C3%A7a%2C%20S%C3%A3o%20Paulo%20-%20SP&amp;output=embed"></iframe>
+                        <a class="map-link"
+                            href="https://www.google.com/maps/search/?api=1&query=R.+Rodovalho+Junior%2C+216+-+Penha+de+Fran%C3%A7a%2C+S%C3%A3o+Paulo+-+SP"
+                            target="_blank" rel="noopener">Como chegar <i class="fa-solid fa-arrow-up-right-from-square"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <!-- AGENDAMENTO -> WHATSAPP -->
+                <form class="booking reveal" id="agendar" style="--d:200ms" novalidate>
+                    <h3>Agende sua avaliação</h3>
+                    <p class="booking-sub">Preencha e abriremos o WhatsApp com a mensagem pronta.</p>
+
+                    <div class="field">
+                        <label for="f-nome">Seu nome</label>
+                        <input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?"
+                            required>
+                        <small class="error" id="f-nome-erro" role="alert"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="f-trat">Tratamento de interesse</label>
+                        <select id="f-trat" name="tratamento">
+                            <option>Quero uma avaliação</option>
+                            <option>Harmonização Facial</option>
+                            <option>Harmonização Corporal</option>
+                            <option>Gerenciamento de pele</option>
+                            <option>Toxina Botulínica</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="field">
+                        <legend>Melhor período</legend>
+                        <div class="seg">
+                            <input type="radio" name="periodo" id="p-manha" value="manhã" checked>
+                            <label for="p-manha">Manhã</label>
+                            <input type="radio" name="periodo" id="p-tarde" value="tarde">
+                            <label for="p-tarde">Tarde</label>
+                            <input type="radio" name="periodo" id="p-qualquer" value="qualquer período">
+                            <label for="p-qualquer">Tanto faz</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="field">
+                        <label for="f-msg">Mensagem <span class="opt">(opcional)</span></label>
+                        <textarea id="f-msg" name="mensagem" rows="3" placeholder="Conte um pouco do que você procura"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block"><i class="fa-brands fa-whatsapp"
+                            aria-hidden="true"></i> Enviar pelo WhatsApp</button>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
 
     <!-- ==========================================
         RODAPÉ / FOOTER
     ========================================== -->
     <footer class="footer">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
+            <div class="footer-grid">
                 <div>
-                    <h3 class="logo" style="margin-bottom: 15px;">CLÍNICA</h3>
-                    <p style="color: var(--text-muted);">Excelência em estética e harmonização facial. Resultados
-                        naturais com segurança e sofisticação.</p>
+                    <h3 class="logo">CLÍNICA</h3>
+                    <p>Excelência em estética e harmonização facial. Resultados naturais com segurança e sofisticação.
+                    </p>
+                    <p class="crbm">Dra. Camila Misaka · CRBM 59784</p>
                 </div>
-                <div>
-                    <h4 style="margin-bottom: 15px;">Navegação</h4>
+                <nav aria-label="Rodapé">
+                    <h4>Navegação</h4>
                     <p><a href="#inicio">Início</a></p>
                     <p><a href="#sobre">Sobre</a></p>
+                    <p><a href="#profissional">A Dra.</a></p>
                     <p><a href="#tratamentos">Tratamentos</a></p>
                     <p><a href="#resultados">Resultados</a></p>
                     <p><a href="#contato">Contato</a></p>
+                </nav>
+                <div>
+                    <h4>Contato</h4>
+                    <p>R. Rodovalho Junior, 216 - Penha de França, São Paulo - SP</p>
+                    <p>Tel/WhatsApp: <a href="https://wa.me/5511999345933" target="_blank" rel="noopener">+55 11
+                            99934-5933</a></p>
+                    <p><a href="mailto:camilamisaka10@gmail.com">camilamisaka10@gmail.com</a></p>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 15px;">Contato</h4>
-                    <p style="color: var(--text-muted);">R. Rodovalho Junior, 216 - Penha de França, São Paulo - SP</p>
-                    <p style="color: var(--text-muted);">Tel/WhatsApp: +55 11 99934-5933</p>
-
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 15px;">Horários</h4>
-                    <p style="color: var(--text-muted);">Terça a Sexta: 08h às 17hs</p>
-                    <p style="color: var(--text-muted);">Sábado: 9h às 16h</p>
+                    <h4>Horários</h4>
+                    <p>Terça a Sexta: 08h às 17hs</p>
+                    <p>Sábado: 9h às 16h</p>
                 </div>
             </div>
         </div>
@@ -330,6 +608,26 @@
             </div>
         </div>
     </footer>
+
+    <!-- Botões flutuantes -->
+    <a class="fab fab-whats" id="fab-whats" href="https://wa.me/5511999345933" target="_blank" rel="noopener"
+        aria-label="Falar no WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+    <button class="fab fab-top" id="fab-top" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"
+            aria-hidden="true"></i></button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imagens" hidden>
+        <button class="lb-btn lb-close" id="lb-close" aria-label="Fechar"><i class="fa-solid fa-xmark"
+                aria-hidden="true"></i></button>
+        <button class="lb-btn lb-prev" id="lb-prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"
+                aria-hidden="true"></i></button>
+        <figure class="lb-stage">
+            <img id="lb-img" alt="">
+            <figcaption id="lb-cap"></figcaption>
+        </figure>
+        <button class="lb-btn lb-next" id="lb-next" aria-label="Próxima"><i class="fa-solid fa-chevron-right"
+                aria-hidden="true"></i></button>
+    </div>
 
     <!-- JS Principal -->
     <script src="script.js"></script>
