@@ -690,6 +690,12 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
     margin-bottom: 22px;
 }
 
+.mission-title {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin: 26px 0 10px;
+}
+
 .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 26px; }
 .chips li {
     display: inline-flex;

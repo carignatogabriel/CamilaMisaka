@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    const WHATSAPP = '5511999345933';
+    const WHATSAPP = '5511970710204';
     // Mensagem automática: usada quando a pessoa não escreve nada e em todos os botões diretos de WhatsApp
     const MENSAGEM_PADRAO = 'Olá, eu vim do site. Gostaria de saber mais sobre os procedimentos.';
     const whatsappUrl = texto => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
 
-    // Botões diretos (WhatsApp flutuante, "Agendar via WhatsApp", telefone do rodapé):
+    // Botões diretos (WhatsApp flutuante, "Vamos conversar", telefone do rodapé):
     // já abrem a conversa com a mensagem pronta, é só apertar enviar.
     $$('a[href^="https://wa.me/"]').forEach(a => { a.href = whatsappUrl(MENSAGEM_PADRAO); });
 
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // "ABERTO AGORA" (horário de São Paulo)
     // Dom=0 ... Sáb=6 → [abre, fecha]
     // ==========================================
-    const SCHEDULE = { 2: [8, 17], 3: [8, 17], 4: [8, 17], 5: [8, 17], 6: [9, 16] };
+    const SCHEDULE = { 2: [9, 19], 3: [9, 19], 4: [9, 19], 5: [9, 19], 6: [9, 15] };
     const DAY_NAMES = ['dom.', 'seg.', 'ter.', 'qua.', 'qui.', 'sex.', 'sáb.'];
 
     function saoPauloNow() {
