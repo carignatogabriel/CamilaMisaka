@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     const WHATSAPP = '5511999345933';
+    // Mensagem automática: usada quando a pessoa não escreve nada e em todos os botões diretos de WhatsApp
+    const MENSAGEM_PADRAO = 'Olá, eu vim do site. Gostaria de saber mais sobre os procedimentos.';
+    const whatsappUrl = texto => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
+
+    // Botões diretos (WhatsApp flutuante, "Agendar via WhatsApp", telefone do rodapé):
+    // já abrem a conversa com a mensagem pronta, é só apertar enviar.
+    $$('a[href^="https://wa.me/"]').forEach(a => { a.href = whatsappUrl(MENSAGEM_PADRAO); });
 
     // ==========================================
     // HEADER, PROGRESSO, PARALLAX E BOTÃO "TOPO"
@@ -223,18 +230,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const periodo = $('input[name="periodo"]:checked').value;
         const msg = $('#f-msg').value.trim();
 
-        const assunto = trat === 'Quero uma avaliação'
-            ? 'Gostaria de agendar uma avaliação'
-            : `Tenho interesse em ${trat} e gostaria de agendar uma avaliação`;
+        // Sem mensagem própria, vai a mensagem automática. Com mensagem, ela vem logo após a identificação do site.
+        const abertura = msg ? `Olá, eu vim do site. ${msg}` : MENSAGEM_PADRAO;
 
-        const texto = [
-            `Olá, Dra. Camila! Meu nome é ${nome}.`,
-            `${assunto}.`,
-            `Melhor período: ${periodo}.`,
-            msg ? `\n${msg}` : ''
-        ].join('\n').trim();
+        const detalhes = [
+            `Meu nome é ${nome}.`,
+            trat !== 'Quero uma avaliação' ? `Tenho interesse em ${trat}.` : '',
+            `Melhor período para o atendimento: ${periodo}.`
+        ].filter(Boolean).join('\n');
 
-        window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+        window.open(whatsappUrl(`${abertura}\n\n${detalhes}`), '_blank', 'noopener');
     });
     $('#f-nome').addEventListener('input', e => {
         if (e.target.value.trim().length >= 2) {
