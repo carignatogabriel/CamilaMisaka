@@ -435,22 +435,29 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
     font-weight: 500;
 }
 
+/* Indicador de funcionamento: vermelho piscando = fechado, verde piscando = aberto */
 .status-dot {
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: #9aa39d;
     flex: none;
+    background: #e5484d;
+    box-shadow: 0 0 0 0 rgba(229, 72, 77, .6);
+    animation: blink-closed 2.2s ease-in-out infinite;
 }
 [data-open-status].is-open .status-dot {
-    background: #5fd08a;
-    box-shadow: 0 0 0 0 rgba(95, 208, 138, .7);
-    animation: ping 2s infinite;
+    background: #3fd47f;
+    box-shadow: 0 0 0 0 rgba(63, 212, 127, .6);
+    animation-name: blink-open;
 }
-@keyframes ping {
-    70%  { box-shadow: 0 0 0 9px rgba(95, 208, 138, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(95, 208, 138, 0); }
+@keyframes blink-closed {
+    0%, 100% { opacity: 1;   box-shadow: 0 0 0 0 rgba(229, 72, 77, .55); }
+    50%      { opacity: .35; box-shadow: 0 0 0 8px rgba(229, 72, 77, 0); }
+}
+@keyframes blink-open {
+    0%, 100% { opacity: 1;   box-shadow: 0 0 0 0 rgba(63, 212, 127, .55); }
+    50%      { opacity: .35; box-shadow: 0 0 0 8px rgba(63, 212, 127, 0); }
 }
 
 .hero-content h1 {
